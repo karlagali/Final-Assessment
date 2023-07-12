@@ -6,3 +6,18 @@ tesla = yf.Ticker("TSLA")
 tesla_data=tesla.history(period='max')
 tesla_data.reset_index(inplace=True)
 tesla_data.head(5)
+
+
+tesla_data[['Date','Dividends']].tail(5)
+
+
+gme = yf.Ticker("GME")
+gme_data=gme.history(period='max')
+
+gme_data.reset_index(inplace=True)
+gme_data.head(5)
+
+gme_data[['Date','Dividends']].tail(5)
+
+tesla_data.plot(x='Date',y='Close',title='Tesla')
+gme_data.plot(x='Date',y='Close',title='GME')
